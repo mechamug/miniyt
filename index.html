@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta property="og:url" content="https://undeadmockingbird.github.io/MiniYT/index.html"/>
+    <meta property="og:title" content="Mini YouTube"/>
+    <meta property="og:description" content="A YouTube for you."/>
+    <meta property="og:image" content="https://avatars3.githubusercontent.com/u/42296129"/>
+    <link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+</head>
+<style>
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+.yt-video-link {
+    display: inline-grid;
+    margin: 5px;
+    text-align: center;
+    transition: color 600ms ease-out;
+    width: 165px;
+    word-break: break-word;
+}
+.yt-video-link-added {
+    color: #999999;
+    display: inline-grid;
+    filter: grayscale(80%);
+    margin: 5px;
+    text-align: center;
+    transition: color 600ms ease-out;
+    width: 165px;
+    word-break: break-word;
+}
+.yt-thumbnail {
+    animation: fadein 2s ease-out;
+    box-sizing: border-box;
+    height: 125px;
+    width: 165px;
+    margin-bottom: 5px;
+    transition: filter 600ms ease-out, box-shadow 300ms ease-out;
+}
+.yt-thumbnail:hover {
+    cursor: pointer;
+}
+.yt-player {
+    flex: 0 0 30%;
+    width: 100%;
+}
+.yt-search {
+    border: none;
+    box-sizing: border-box;
+    flex: 0 0 30px;
+    padding: 5px;
+    width: 100%;
+}
+.yt-playlist {
+    box-sizing: border-box;
+    flex: 1 1 auto;
+    overflow-y: scroll;
+    padding-left: 5px;
+    padding-right: 15px;
+    width: 100%;
+}
+.yt-playlistentry {
+    cursor: pointer;
+}
+.yt-panel {
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+    position: fixed;
+    right: 0px;
+    width: 30%;
+}
+.yt-mainview {
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    justify-content: space-evenly;
+    overflow-y: scroll;
+    position: absolute;
+    width: 70%;
+    padding: 5px;
+}
+.yt-playing {
+    animation: fadein 2s ease-out;
+    cursor: pointer;
+}
+a {
+    text-decoration: none;
+}
+body {
+    background: #282828;
+    color: #DDDDDD;
+    font-family: "Roboto", sans-serif;
+    font-size: 0.75rem;
+    font-weight: 100;
+    margin: 0px;
+}
+</style>
+<body>
+    <div id="panel" class="yt-panel">
+        <input id="search" value="Press ? for help." class="yt-search"/>
+        <div id="player" class="yt-player"></div>
+        <input type="text" id="favoritesInput" list="favoritesList"/>
+        <datalist id="favoritesList"></datalist>
+        <div id="playlist" class="yt-playlist"></div>
+    </div>
+    <div id="mainview" class="yt-mainview"></div>
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="miniyt-playlist.js"></script>
+    <script src="miniyt-player.js"></script>
+    <script src="miniyt-query.js"></script>
+    <script src="miniyt-favorites.js"></script>
+    <script src="miniyt-help.js"></script>
+    <script src="miniyt-shortcuts.js"></script>
+    <script src="miniyt-main.js"></script>
+</body>
+</html>
