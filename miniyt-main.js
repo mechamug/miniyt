@@ -66,7 +66,7 @@ function scrollMainView(e) {
     ytMainView.scrollTo(0, offset - window.innerHeight / 3);
 }
 function configure() {
-    apiKey = "AIzaSyBMqv4dXnTJOGQtZZS3CBjvf748QvxSzF0";
+    apiKey = "AIzaSyDM3hzbxJh4UTjb9CDRPCwYNe_zTNNf_eE";
     videosPerSearch = 300;
     videosPerRelated = 200;
     document.title = "MiniYT 1.2";
